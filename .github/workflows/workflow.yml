@@ -147,11 +147,7 @@ jobs:
 
       - name: Create esy wrapper
         run: |
-          echo '{
-            "esy": {
-                    "exportedEnv": { "ESY_CHECKSEUM": { "val": "true", "scope": "global" } }
-              }
-            }" > package.json
+          echo '{ "esy": { "exportedEnv": { "ESY_CHECKSEUM": { "val": "true", "scope": "global" } } } }' > package.json
           echo '{
             "name": "cross-compile",
             "dependencies": {
