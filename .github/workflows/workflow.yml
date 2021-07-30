@@ -143,14 +143,12 @@ jobs:
       
       - name: Define env
         run: echo "GITHUB_TAG=$(git describe --always)" >> $GITHUB_ENV
+        run: echo "ESY_CHECKSEUM=true" >> $ESY_CHECKSEUM
 
       - name: Create esy wrapper
         run: |
           echo '{
             "name": "cross-compile",
-            "esy": {
-                    "exportedEnv": { "ESY_CHECKSEUM": { "val": "true", "scope": "global" } }
-                  },
             "dependencies": {
               "ocaml": "${{ matrix.ocaml-version }}",
               "doi2bib": "./doi2bib.opam",
