@@ -142,8 +142,9 @@ jobs:
           git config --global user.email github-actions-bot@users.noreply.github.com
       
       - name: Define env
-        run: echo "GITHUB_TAG=$(git describe --always)" >> $GITHUB_ENV
-        run: echo "ESY_CHECKSEUM=true" >> $ESY_CHECKSEUM
+        run: |
+          echo "GITHUB_TAG=$(git describe --always)" >> $GITHUB_ENV
+          echo "ESY_CHECKSEUM=true" >> $ESY_CHECKSEUM
 
       - name: Create esy wrapper
         run: |
